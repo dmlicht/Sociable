@@ -21,11 +21,13 @@ gem 'jquery-rails'
 
 group :development do
   gem 'rspec-rails'
+  gem 'annotate', "~> 2.4.1.beta1"
 end
 
 group :test do
   gem 'rspec'
   gem 'webrat'
+  gem 'factory_girl'
 end
 
 # To use ActiveModel has_secure_password
