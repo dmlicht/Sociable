@@ -10,7 +10,7 @@ describe UsersController do
 
     it "should be successful" do
       get :show, :id => @user
-      respone.should be_success
+      response.should be_success
     end
 
     it "should show the right user" do

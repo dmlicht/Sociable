@@ -46,6 +46,9 @@ GEM
       multi_json (~> 1.0)
     factory_girl (2.3.2)
       activesupport
+    factory_girl_rails (1.4.0)
+      factory_girl (~> 2.3.0)
+      railties (>= 3.0.0)
     heroku (2.17.0)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
@@ -142,7 +145,7 @@ PLATFORMS
 DEPENDENCIES
   annotate (~> 2.4.1.beta1)
   coffee-rails (~> 3.1.1)
-  factory_girl
+  factory_girl_rails
   heroku
   jquery-rails
   rails (= 3.1.1)
