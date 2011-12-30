@@ -82,7 +82,7 @@ describe UsersController do
 
       it "should flash a welcome message to the user" do
         post :create, :user => @attr
-        flash[:success].should =~ /welcome to the RideSociable/i
+        flash[:success].should =~ /welcome to RideSociable/i
       end
     end
   end
