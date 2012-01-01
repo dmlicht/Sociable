@@ -11,6 +11,10 @@ module SessionsHelper
   def current_user=(user)
     @current_user = user
   end
+
+  def current_user?(user)
+    @current_user == user
+  end
   
   def signed_in?
     !current_user.nil?
@@ -19,6 +23,10 @@ module SessionsHelper
   def sign_out
     cookies.delete :remember_token
     self.current_user = nil
+  end
+
+  def deny_access
+    redirect_to signin_path, :notice => "Don't be a trickster. You need to sign in to do that."
   end
 
   private
