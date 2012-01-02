@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'heroku'
 gem 'pg'
 gem 'compass'
+gem "kaminari"
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -25,6 +26,7 @@ gem 'jquery-rails'
 group :development do
   gem 'rspec-rails'
   gem 'annotate', "~> 2.4.1.beta1"
+  gem 'faker'
 end
 
 group :test do
