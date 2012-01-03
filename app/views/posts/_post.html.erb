@@ -1,0 +1,16 @@
+<tr>
+  <td class="post">
+    <span class="content"><%= post.content %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(post.created_at) %> ago
+    </span>
+  </td>
+  <% if current_user == post.user %>
+    <td>
+      <%= link_to "delete post?", post, 
+        :method => "delete", 
+        :confirm => "are you sure?", 
+        :title => post.content %>
+    </td>
+  <% end %>
+</tr>

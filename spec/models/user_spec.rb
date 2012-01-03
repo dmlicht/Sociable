@@ -140,6 +140,44 @@ describe User do
       @user.should be_admin
     end
   end
+
+  describe "post association" do
+    before(:each) do
+      @user = User.create!(@attr)
+      @post1 = Factory(:post, :user => @user, :created_at => 2.days.ago)
+      @post2 = Factory(:post, :user => @user, :created_at => 2.hours.ago)
+    end
+
+    it "should recognize the post attr" do
+      @user.should respond_to(:posts)
+    end
+
+    it "should return the posts in the right order" do
+      @user.posts.should == [@post2, @post1]
+    end
+
+    it "destroying user should destroy associated posts" do
+      @user.destroy
+      [@post1, @post2].each do |post|
+        Post.find_by_id(post.id).should be_nil
+      end
+    end
+
+    describe "post feed" do
+      it "should respond to feed" do
+        @user.should respond_to(:feed)
+      end
+
+      it "should include the users posts" do
+        @user.feed.include?(@post1).should be_true
+      end
+
+      it "should include other uses posts" do
+        @post3 = Factory(:post, :user => Factory(:user, :email => Factory.next(:email)))
+        @user.feed.include?(@post3).should be_true
+      end
+    end
+  end
 end
 
 # == Schema Information

@@ -7,6 +7,11 @@ FactoryGirl.define do
   end
 
   sequence :email do |n|
-    "person#{n}@example.com"
+    "person#{n+3}@example.com"
+  end
+
+  factory :post do
+    content "Some neato test data"
+    association :user
   end
 end

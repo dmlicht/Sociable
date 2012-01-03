@@ -1,0 +1,19 @@
+<tr>
+  <td class="user">
+    <%= link_to feed_item.user.name, feed_item.user %>
+  </td>
+  <td class="content">
+    <%= feed_item.content %>
+  </td>
+  <td class="timestamp">
+    cleverly stated <%= time_ago_in_words(feed_item.created_at) %> ago.
+  </td>
+  <% if current_user == feed_item.user %>
+    <td>
+      <%= link_to 'delete', feed_item, 
+              :method => "delete",
+              :confirm => "but your words were so pretty",
+              :title => feed_item.content %>
+    </td>
+  <% end %>
+</tr>

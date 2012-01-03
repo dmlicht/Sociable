@@ -1,1 +1,6 @@
 <%= @user.name %>, <%= @user.email %>
+<% unless @user.posts.empty? %>
+  <table class="posts" summary="user posts">
+    <%= render @posts %>
+  </table>
+<% end %>
