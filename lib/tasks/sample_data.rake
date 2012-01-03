@@ -1,4 +1,4 @@
-require 'faker'
+require 'faker' if Rails.env =~ /development/i
 namespace :db do
   desc "fill database for sample data"
   task :populate => :environment do
