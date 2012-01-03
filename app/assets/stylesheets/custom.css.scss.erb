@@ -1,0 +1,74 @@
+$highlight-color: #E88;
+$title-color: #333;
+$sub-title-color: #555;
+
+body {
+  background-image: url(<%= asset_path('ricepaper-bg.png') %>);
+  font-family: "adelle", "helvetica", sans-serif;
+  font-size: medium;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+}
+
+.field_with_errors label {
+  background-color: red;
+}
+
+#error_explanation {
+  background-color: red;
+}
+
+a {
+  color: $highlight-color;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  float: right;
+  li {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    a {
+      text-decoration: none;
+      color: $highlight-color;
+      font-size: 1.2em; 
+       -webkit-text-shadow: 2px 2px 1px #FFF;
+       -moz-text-shadow: 2px 2px 1px #FFF;
+       text-shadow: 2px 2px 1px #FFF;
+    }
+  }
+}
+
+hgroup {
+  margin-bottom: 40px;
+  h1 {
+    font-weight: bold;
+    font-size: 3.5em;
+    margin-bottom: 0px;
+    a {
+      color: $title-color;
+      text-decoration: none;
+      text-shadow: 5px 5px 1px #FFF;
+    }
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 0px;
+    padding-top: none;
+    color: $sub-title-color;
+  }
+}
+
+#landing{
+  p {
+    text-align: center;
+  }
+}

@@ -4,8 +4,8 @@ gem 'rails', '3.1.1'
 gem 'sqlite3'
 gem 'heroku'
 gem 'pg'
-gem 'compass'
 gem "kaminari"
+gem 'compass'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
