@@ -25,12 +25,10 @@ describe "LayoutLinks" do
     visit root_path
     click_link "About"
     response.should have_selector("title", :content => "About")
-    click_link "Home"
+    click_link "Ride Sociable"
     response.should have_selector("title", :content => "Home")
     click_link "Contact"
     response.should have_selector("title", :content => "Contact")
-    click_link "Sign up"
-    response.should have_selector("title", :content => "Sign up")
   end
 
   describe "when not signed in" do
@@ -53,7 +51,5 @@ describe "LayoutLinks" do
       visit root_path
       response.should have_selector("a", :href => signout_path, :content => "Sign out")
     end
-
-    it "should have a profile link"
   end
 end

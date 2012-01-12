@@ -1,0 +1,5 @@
+<%= form_for current_user.get_pair(@user), :html => { :method => :delete } do |f| %>
+  <div class="actions">
+    <%= f.submit "remove wing" %>
+  </div>
+<% end %>

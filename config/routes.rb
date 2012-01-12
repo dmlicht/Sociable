@@ -1,9 +1,15 @@
 Sociable::Application.routes.draw do
   get "sessions/new"
+  match "pairs/accept" => "pairs#accept"
 
   resources :users
   resources :sessions, :only => [:new, :create, :destory]
   resources :posts, :only => [:create, :destroy]
+  resources :pairs, :only => [:create, :edit, :update, :destroy] do
+    member do
+      get 'accept'
+    end
+  end
 
   match '/signup', :to => 'users#new'
   match '/signin', :to => 'sessions#new'

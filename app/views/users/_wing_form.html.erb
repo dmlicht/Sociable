@@ -1,0 +1,14 @@
+<% unless current_user?(@user) %>
+  <div id="wing_form">
+    <% if current_user.wing?(@user) %>
+      <%= render 'remove_wing' %>
+    <% elsif current_user.pending_wing?(@user) %>
+      <p> wing pending </p>
+    <% elsif current_user.requested_wing?(@user) %>
+      <%= render :partial => 'shared/accept_wing', :locals => {:user => @user} %>
+      <%= render :partial => 'shared/reject_wing', :locals => {:user => @user} %>
+    <% else %>
+      <%= render 'add_wing' %>
+    <% end %>
+  </div>
+<% end %>

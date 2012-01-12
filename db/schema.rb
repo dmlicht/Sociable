@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120102060627) do
+ActiveRecord::Schema.define(:version => 20120106184125) do
+
+  create_table "pairs", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "wing_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "accepted",      :default => false
+    t.string   "interested_in"
+  end
+
+  add_index "pairs", ["user_id"], :name => "index_pairs_on_user_id"
+  add_index "pairs", ["wing_id"], :name => "index_pairs_on_wing_id"
 
   create_table "posts", :force => true do |t|
     t.string   "content"

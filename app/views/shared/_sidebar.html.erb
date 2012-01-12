@@ -1,0 +1,10 @@
+<section id="sidebar">
+  <p> number of wings: <%= current_user.wings.count %> </p>
+  <% unless current_user.wings.nil? %>
+  <ul>
+    <% current_user.wings.each do |wing| %>
+      <li> <%= link_to wing.name, wing %> </li>
+    <% end %>
+  </ul>
+  <% end %>
+</section>

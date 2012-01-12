@@ -9,4 +9,14 @@ module ApplicationHelper
       "#{base_title} | #{@sub_title}"
     end
   end
+
+  def tagline
+    base = "Bring your wing"
+    tag_decider = rand(2)
+    if tag_decider == 0
+      base + "man"
+    else
+      base + "women"
+    end
+  end
 end

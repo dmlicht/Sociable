@@ -14,4 +14,9 @@ FactoryGirl.define do
     content "Some neato test data"
     association :user
   end
+
+  factory :pair do
+    association :user
+    association :wing
+  end
 end

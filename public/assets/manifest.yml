@@ -1,8 +1,11 @@
 ---
+boxes.png: boxes-71b5609542537476482f7a7913baa9b9.png
+fabric_plaid.png: fabric_plaid-e267aa2bdeebc67c0e9d1f5b1fe1db36.png
 rails.png: rails-e4b51606cd77fda2615e7439907bfc92.png
 ricepaper-bg.png: ricepaper-bg-7b74dbb066fcc91440043fdc55a66dc9.png
-application.js: application-ece36e73f8684bb9aef36b6332629ed2.js
-application.css: application-d89b46a026dcf9239cdb88ccb1ea08b6.css
+wheel.png: wheel-764e3b2bbd1d51b40cbbcf1628813b3a.png
+application.js: application-79837dacef670c5bed2d67be22ec2f32.js
+application.css: application-b5a1dcc246e452506ca89c89c9ab8272.css
 plugins/buttons/icons/cross.png: plugins/buttons/icons/cross-1f87fac86c438386527b5e7d5ceecb0e.png
 plugins/buttons/icons/key.png: plugins/buttons/icons/key-5f38d0204e83d3d83585a62ff993342b.png
 plugins/buttons/icons/tick.png: plugins/buttons/icons/tick-09de3f730b3b6ef960450a506b0916a9.png

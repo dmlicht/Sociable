@@ -1,0 +1,26 @@
+<li>
+  <span class="user">
+    <%= link_to pair_request.user.name, pair_request.user %>
+  </span>
+  <br />
+  <span class="accept">
+    <%= form_for pair_request, :url => {:action => "accept", :controller => "pairs"} do |f| %>
+      <div>
+        <%= f.hidden_field :user_id %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Accept" %>
+      </div>
+    <% end %>
+  </span>
+  <span class="reject">
+    <%= form_for pair_request, :html => {:method => "delete"} do |f| %>
+      <div>
+        <%= f.hidden_field :user_id %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Decline" %>
+      </div>
+    <% end %>
+  </span>
+</li>

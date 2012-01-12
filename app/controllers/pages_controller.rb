@@ -4,6 +4,7 @@ class PagesController < ApplicationController
     if signed_in?
       @post = Post.new
       @feed_items = Kaminari.paginate_array(current_user.feed).page(params[:page])
+      @pair_requests = current_user.requested_pairs
     end
   end
 
@@ -14,5 +15,4 @@ class PagesController < ApplicationController
   def about
     @sub_title = "About"
   end
-
 end

@@ -184,6 +184,7 @@ describe UsersController do
 
       it "should deny access to the 'update'" do
         put :update, :id => @user, :user => {}
+        response.should redirect_to(signin_path)
       end
     end
 

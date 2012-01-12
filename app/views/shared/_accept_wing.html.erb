@@ -1,0 +1,8 @@
+<%= form_for current_user.requested_pairs.find_by_user_id(user), :url => {:controller => "pairs", :action => "accept"} do |f| %>
+  <div>
+    <%= f.hidden_field :user_id, :value => user.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Accept" %>
+  </div>
+<% end %>

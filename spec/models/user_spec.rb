@@ -178,6 +178,91 @@ describe User do
       end
     end
   end
+
+  describe "pairs" do
+    before(:each) do
+      @user = User.create!(@attr)
+      @wing = User.Factory(:user)
+    end
+
+    it "should respond to the pairs attribute" do
+      @user.should respond_to(:pairs)
+    end
+
+    it "should respond to the direct_pairs attribute" do
+      @user.should respond_to(:direct_pairs)
+    end
+     
+    it "should respond to the inverse_pairs attribute" do
+      @user.should respond_to(:inverse_pairs)
+    end
+
+    it "should respond to pending pairs" do
+      @user.should respond_to(:pending_pairs)
+    end
+
+    it "should respond to requested pairs" do
+      @user.should respond_to(:requested_pairs)
+    end
+
+    it "should respond to wings method" do
+      @user.should respond_to(:wings)
+    end
+
+    it "should respond to :direct_wings" do
+      @user.should respond_to(:direct_wings)
+    end
+
+    it "should respond to :inverse_wings" do
+      @user.should respond_to(:inverse_wings)
+    end
+
+    it "should have a wing? method" do
+      @user.should respond_to(:wing?)
+    end
+
+    it "should respond to request_wing!" do
+      @user.should respond_to(:request_wing!)
+    end
+    
+    it "should respond to remove wing!" do
+      @user.should respond_to(:remove_wing!)
+    end
+
+    describe "wings method" do
+      before(:each) do
+        @inverse_wing = Factory(:user, :email => Factory.next(:email))
+        @non_wing_user = Factory(:user, :email => Factory.next(:email))
+        @pair1 = Factory(:pair, :user => @user, :wing => @wing, :accepted => true)
+        @pair2 = Factory(:pair, :user => @inverse_wing, :wing => @user, :accepted => true)
+      end
+
+      it "should list all wings" do
+        @user.wings.should include(@wing, @inverse_wing)
+      end
+
+      it "should not include non-wings" do
+        @user.wings.should_not include(@non_wing_user)
+      end
+
+      it "should include all direct wings" do
+        @user.wings.should include(*@user.direct_wings)
+      end
+
+      it "should include all inverse wings" do
+        @user.wings.should include(*@user.inverse_wings)
+      end
+    end
+
+    describe "adding wings" do
+      before(:each) do
+        @requester = Factory(:user, :email => Factory.next(:email))
+      end
+
+      it "request_wing! should add a user to the requestees list"
+      it "accept_wing! should add a user from requested_wings to wings"
+    end
+  end
 end
 
 # == Schema Information
@@ -191,5 +276,6 @@ end
 #  updated_at         :datetime
 #  encrypted_password :string(255)
 #  salt               :string(255)
+#  admin              :boolean         default(FALSE)
 #
 

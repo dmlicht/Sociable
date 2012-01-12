@@ -1,4 +1,5 @@
 <%= @user.name %>, <%= @user.email %>
+<%= render 'wing_form' if signed_in? %>
 <% unless @user.posts.empty? %>
   <table class="posts" summary="user posts">
     <%= render @posts %>

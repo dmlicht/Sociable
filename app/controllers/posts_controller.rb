@@ -9,6 +9,7 @@ class PostsController < ApplicationController
       redirect_to root_path
     else
       @feed_items = []
+      @pair_requests = []
       render 'pages/home'
     end
   end
@@ -19,8 +20,9 @@ class PostsController < ApplicationController
     redirect_back_or root_path
   end
 
-  def authorized_user
-    @post = Post.find(params[:id])
-    redirect_to root_path unless current_user.admin? or current_user?(@post.user)
-  end
+  private
+    def authorized_user
+      @post = Post.find(params[:id])
+      redirect_to root_path unless current_user.admin? or current_user?(@post.user)
+    end
 end

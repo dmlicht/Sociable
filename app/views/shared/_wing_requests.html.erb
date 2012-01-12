@@ -1,0 +1,8 @@
+<% unless @pair_requests.empty? %>
+  <section id="wing-requests">
+    <h1>New Wing Requests</h1>
+    <ul class="wing-requests" summary="wing requests">
+      <%= render :partial => "shared/pair_request", :collection => @pair_requests %>
+    </ul>
+  </section>
+<% end %>
