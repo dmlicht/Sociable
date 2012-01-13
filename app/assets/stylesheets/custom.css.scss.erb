@@ -23,7 +23,7 @@ body {
 }
 
 .field_with_errors label {
-  background-color: red;
+  background-color: #FDD;
 }
 
 ul {
@@ -33,9 +33,6 @@ ul {
 }
 
 
-#error_explanation {
-  background-color: red;
-}
 
 a {
   color: $highlight-color;
@@ -161,4 +158,32 @@ ul.wing-requests {
 section#sidebar {
   width: $sidebar-width;
   float: right;
+}
+
+.flash {
+  padding: 15px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.success {
+  background: #DFD;
+  border-bottom: 1px solid #CFC;
+  border-top: 1px solid #CFC;
+}
+
+.notice {
+  background: #FFC;
+  border-bottom: 1px solid #FFB;
+  border-top: 1px solid #FFB;
+}
+
+.error {
+  background-color: #FDD;
+  border-bottom: 1px solid #FCC;
+  border-top: 1px solid #FCC;
+}
+
+#error_explanation {
+  background-color: #FDD;
 }

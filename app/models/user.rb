@@ -14,14 +14,6 @@ class User < ActiveRecord::Base
   has_many :direct_wings, :through => :direct_pairs, :source => :wing
   has_many :inverse_wings, :through => :inverse_pairs, :source => :user
 
-  #has_many :pairs, :dependent => :destroy
-  #has_many :inverse_pairs, :dependent => :destroy, :class_name => "Pair", :foreign_key => "wing_id"
-  #has_many :direct_wings, :through => :pairs, :conditions => ['accepted = ?', true], :source => :wing
-  #has_many :inverse_wings, :through => :inverse_pairs, :conditions => ['accepted = ?', true], :source => :user
-
-  #has_many :pending_wings, :through => :pairs, :conditions => ['accepted = ?', false], :source => :wing
-  #has_many :requested_wings, :through => :inverse_pairs, :conditions => ['accepted = ?', false], :source => :user
-
   email_format = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :name, :presence => true,

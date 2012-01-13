@@ -4,23 +4,9 @@
   </span>
   <br />
   <span class="accept">
-    <%= form_for pair_request, :url => {:action => "accept", :controller => "pairs"} do |f| %>
-      <div>
-        <%= f.hidden_field :user_id %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Accept" %>
-      </div>
-    <% end %>
+    <%= render :partial => 'shared/accept_pair', :locals => {:pair_request => pair_request} %>
   </span>
   <span class="reject">
-    <%= form_for pair_request, :html => {:method => "delete"} do |f| %>
-      <div>
-        <%= f.hidden_field :user_id %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Decline" %>
-      </div>
-    <% end %>
+    <%= render :partial => 'shared/reject_pair', :locals => {:pair_request => pair_request} %>
   </span>
 </li>

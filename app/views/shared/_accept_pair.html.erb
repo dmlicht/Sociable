@@ -1,0 +1,9 @@
+<%= form_for pair_request, :url => accept_pair_path(pair_request) do |f| %>
+  <div>
+    <%= f.hidden_field :user_id, :value => pair_request.user.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Accept" %>
+  </div>
+<% end %>
+

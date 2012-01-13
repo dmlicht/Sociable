@@ -4,9 +4,9 @@
       <%= render 'remove_wing' %>
     <% elsif current_user.pending_wing?(@user) %>
       <p> wing pending </p>
-    <% elsif current_user.requested_wing?(@user) %>
-      <%= render :partial => 'shared/accept_wing', :locals => {:user => @user} %>
-      <%= render :partial => 'shared/reject_wing', :locals => {:user => @user} %>
+    <% elsif pair_request = current_user.requested_wing?(@user) %>
+      <%= render :partial => 'shared/accept_pair', :locals => {:pair_request => pair_request} %>
+      <%= render :partial => 'shared/reject_pair', :locals => {:pair_request => pair_request} %>
     <% else %>
       <%= render 'add_wing' %>
     <% end %>

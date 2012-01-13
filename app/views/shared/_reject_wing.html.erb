@@ -1,5 +1,0 @@
-<%= form_for current_user.requested_pairs.find_by_user_id(user), :html => {:method => :delete} do |f|%>
-<div class="actions">
-  <%= f.submit "Reject" %>
-</div>
-<% end %>
